@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============ EDIT: browser tab title + Google description ============ -->
+<title>Hyunji Fitness | Personal Training in Somerville, MA</title>
+<meta name="description" content="One-on-one personal training in Somerville, MA. Strength coaching for beginners, returners, and recreational athletes.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#121317;           /* page background */
+    --panel:#1b1d23;        /* cards */
+    --panel-2:#22252d;      /* raised cards */
+    --line:#2e323c;
+    --text:#f2f3f5;
+    --muted:#a4abb8;
+    --accent:#ff5c33;       /* EDIT: main accent — try #c9f24d lime or #35d0c0 teal */
+    --accent-2:#ffab54;     /* gradient partner */
+    --max:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif; font-weight:700;
+           line-height:1.08; margin:0 0 .5em; letter-spacing:-.02em}
+  h1{font-size:clamp(2.6rem,6.5vw,4.6rem); text-transform:uppercase}
+  h2{font-size:clamp(1.8rem,3.8vw,2.7rem); text-transform:uppercase}
+  h3{font-size:1.1rem; letter-spacing:-.01em}
+  p{margin:0 0 1.1em; color:var(--muted)}
+  a{color:var(--accent)}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
+  section{padding:88px 0}
+  .rule{height:1px; background:var(--line); max-width:var(--max); margin:0 auto}
+  .hl{background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      -webkit-background-clip:text; background-clip:text; color:transparent}
+
+  /* ---------- nav ---------- */
+  nav{position:sticky; top:0; z-index:20; background:rgba(18,19,23,.86);
+      backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  .nav-in{display:flex; align-items:center; justify-content:space-between;
+          gap:16px; padding:16px 24px; max-width:var(--max); margin:0 auto}
+  .brand{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1rem;
+         letter-spacing:.06em; text-transform:uppercase; color:var(--text); text-decoration:none}
+  .brand span{color:var(--accent)}
+  .nav-links{display:flex; gap:26px; flex-wrap:wrap}
+  .nav-links a{color:var(--muted); text-decoration:none; font-size:.85rem;
+               letter-spacing:.08em; text-transform:uppercase; font-weight:500}
+  .nav-links a:hover{color:var(--text)}
+  @media(max-width:700px){ .nav-links{display:none} }
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-block; text-decoration:none; padding:15px 30px; border-radius:6px;
+       font-weight:600; font-size:.95rem; letter-spacing:.04em; text-transform:uppercase;
+       background:linear-gradient(100deg,var(--accent),var(--accent-2)); color:#15161a;
+       transition:transform .15s ease, filter .15s ease}
+  .btn:hover{transform:translateY(-2px); filter:brightness(1.08)}
+  .btn-ghost{background:none; color:var(--text); border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative; overflow:hidden}
+  .hero::before{content:""; position:absolute; inset:-30% -10% auto -20%; height:620px;
+    background:radial-gradient(45% 55% at 20% 40%, rgba(255,92,51,.28), transparent 70%),
+               radial-gradient(40% 50% at 75% 25%, rgba(255,171,84,.18), transparent 70%);
+    filter:blur(10px); pointer-events:none}
+  .hero-in{position:relative; display:grid; grid-template-columns:1.05fr .95fr;
+           gap:56px; align-items:center; padding:96px 0 92px}
+  .eyebrow{font-size:.78rem; letter-spacing:.2em; text-transform:uppercase;
+           color:var(--accent); font-weight:600; margin-bottom:22px}
+  .lede{font-size:1.15rem; max-width:44ch; color:#c6ccd6}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:30px}
+  .photo-frame{border:1px solid var(--line); border-radius:12px; padding:10px;
+               background:var(--panel)}
+  .photo{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:8px; display:block;
+         background:var(--panel-2)}
+  .photo-note{display:flex; align-items:center; justify-content:center; text-align:center;
+              color:#6f7684; font-size:.88rem; padding:24px}
+  .stats{display:flex; gap:34px; margin-top:42px; flex-wrap:wrap}
+  .stat-n{font-family:'Space Grotesk',sans-serif; font-size:1.9rem; font-weight:700;
+          color:var(--text); line-height:1}
+  .stat-l{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  @media(max-width:880px){
+    .hero-in{grid-template-columns:1fr; gap:38px; padding:60px 0}
+    .hero-photo{order:-1; max-width:340px}
+  }
+
+  /* ---------- layout helpers ---------- */
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
+  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:52px}
+  @media(max-width:880px){ .grid-3,.grid-2{grid-template-columns:1fr; gap:22px} }
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:12px;
+        padding:28px; transition:border-color .2s ease, transform .2s ease}
+  .card:hover{border-color:#3d4351; transform:translateY(-3px)}
+  .card h3{margin-bottom:.5em}
+  .card p{margin:0; font-size:.96rem}
+  .num{font-family:'Space Grotesk',sans-serif; font-size:.8rem; font-weight:700;
+       letter-spacing:.16em; color:var(--accent); display:block; margin-bottom:14px}
+  .lead-in{max-width:54ch}
+  .sec-head{display:flex; align-items:baseline; gap:18px; flex-wrap:wrap; margin-bottom:34px}
+  .sec-tag{font-size:.75rem; letter-spacing:.2em; text-transform:uppercase; color:var(--accent)}
+
+  ul.clean{list-style:none; padding:0; margin:0}
+  ul.clean li{padding:10px 0 10px 26px; position:relative; color:var(--muted); font-size:.96rem}
+  ul.clean li::before{content:""; position:absolute; left:2px; top:20px; width:10px; height:2px;
+      background:var(--accent)}
+
+  /* ---------- rates ---------- */
+  .rates{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
+  @media(max-width:880px){ .rates{grid-template-columns:1fr} }
+  .rate{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:32px}
+  .rate.featured{background:var(--panel-2); border-color:var(--accent)}
+  .rate .tag{font-size:.75rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)}
+  .rate.featured .tag{color:var(--accent)}
+  .rate .price{font-family:'Space Grotesk',sans-serif; font-size:3rem; font-weight:700;
+               margin:14px 0 2px; line-height:1}
+  .rate .per{font-size:.92rem; color:var(--muted)}
+  .fineprint{font-size:.9rem; color:#7d8593; margin-top:22px}
+
+  /* ---------- hours ---------- */
+  .hours-row{display:flex; justify-content:space-between; gap:20px; padding:16px 0;
+             border-bottom:1px solid var(--line)}
+  .hours-row:last-child{border-bottom:none}
+  .hours-row span:first-child{font-family:'Space Grotesk',sans-serif; font-weight:500;
+    letter-spacing:.04em; text-transform:uppercase; font-size:.92rem}
+  .hours-row span:last-child{color:var(--muted)}
+
+  /* ---------- cta + footer ---------- */
+  .cta{position:relative; text-align:center; padding:96px 24px; border-radius:16px;
+       background:linear-gradient(135deg,#22252d,#1a1c22); border:1px solid var(--line);
+       overflow:hidden}
+  .cta::after{content:""; position:absolute; inset:auto -10% -60% -10%; height:340px;
+    background:radial-gradient(50% 60% at 50% 50%, rgba(255,92,51,.22), transparent 70%)}
+  .cta > *{position:relative; z-index:1}
+  .cta p{max-width:46ch; margin-left:auto; margin-right:auto}
+  footer{border-top:1px solid var(--line); padding:34px 0; font-size:.86rem; color:#6f7684}
+  .foot-in{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-in">
+    <!-- EDIT: your business name -->
+    <a class="brand" href="#top">Hyunji<span>Fitness</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#approach">Approach</a>
+      <a href="#how">How it works</a>
+      <a href="#rates">Rates</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<div class="hero" id="top">
+  <div class="wrap hero-in">
+    <div>
+      <div class="eyebrow">Personal Training — Somerville, MA</div>
+      <h1>Get strong<br>on <span class="hl">your terms</span>.</h1>
+      <p class="lede">
+        One-on-one coaching in a small private studio five minutes from Davis Square.
+        No judgment, no gimmicks — real programming, built around the body you have
+        and the goals you actually care about.
+      </p>
+      <div class="hero-actions">
+        <!-- EDIT: swap # for your booking link when you have one -->
+        <a class="btn" href="#contact">Book a free intro call</a>
+        <a class="btn btn-ghost" href="#rates">See rates</a>
+      </div>
+      <div class="stats">
+        <div>
+          <div class="stat-n">1:1</div>
+          <div class="stat-l">Always private</div>
+        </div>
+        <div>
+          <div class="stat-n">60<span style="font-size:1.1rem">min</span></div>
+          <div class="stat-l">Per session</div>
+        </div>
+        <div>
+          <div class="stat-n">ACSM</div>
+          <div class="stat-l">Certified trainer</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-frame">
+        <!-- EDIT: add hyunji.jpg to your repo and it appears here automatically -->
+        <img class="photo" src="hyunji.jpg" alt="Hyunji coaching a client"
+             onerror="this.outerHTML='&lt;div class=\'photo photo-note\'&gt;Add a photo named hyunji.jpg to your repo and it will appear here&lt;/div&gt;'">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<div class="wrap">
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about">
+    <div class="grid-2">
+      <div>
+        <div class="sec-head"><span class="sec-tag">01 — About</span></div>
+        <h2>Hi, I'm Hyunji.</h2>
+        <p>
+          I started coaching in college. I was competing in taekwondo when the chance came up
+          to teach the cardio kickboxing PE class, and I ended up teaching it for four years.
+        </p>
+        <p>
+          After that I spent several years as a mechanical engineer, which changed how I think
+          about the body: how forces travel through joints, why small alignment details matter,
+          and how to build strength that holds up over time.
+        </p>
+        <p>
+          I missed working with people, so I earned my ACSM Certified Personal Trainer
+          credential and started coaching again — first over Zoom, then in person. Today I
+          train clients one-on-one at Expansive Strength &amp; Fitness on Cedar Street.
+        </p>
+        <p>
+          <!-- EDIT: make this line yours -->
+          Outside the gym you'll find me playing volleyball, baking sourdough, and walking my poodle.
+        </p>
+      </div>
+      <div>
+        <div class="card" style="margin-top:56px">
+          <h3>Credentials</h3>
+          <ul class="clean">
+            <li>ACSM Certified Personal Trainer</li>
+            <li>B.S. &amp; M.Eng., Mechanical Engineering — Cornell University</li>
+            <li>CPR/AED certified</li>
+            <li>Four years teaching university group fitness</li>
+            <li>Competitive taekwondo and volleyball background</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ==================== APPROACH ==================== -->
+  <section id="approach">
+    <div class="sec-head">
+      <span class="sec-tag">02 — Approach</span>
+    </div>
+    <h2>How I coach</h2>
+    <p class="lead-in">Four things shape every session I run.</p>
+    <div class="grid-3" style="margin-top:38px">
+      <div class="card">
+        <span class="num">01</span>
+        <h3>Your body isn't a project to fix</h3>
+        <p>No talk about earning food or burning off the weekend. We focus on what your body
+           can do and what you want it to do next.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h3>Mechanics before load</h3>
+        <p>My engineering background shows up in the details: how you move, where you
+           compensate, and building a base that keeps you training for years.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3>Progress you can feel</h3>
+        <p>Groceries up three flights without thinking. Back to your sport. Deadlifting your
+           bodyweight. Goals that matter to you, tracked session to session.</p>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:22px">
+      <div class="card">
+        <span class="num">04</span>
+        <h3>Training you look forward to</h3>
+        <p>If you dread your workouts, they won't last. The best program is the one you're
+           still doing a year from now.</p>
+      </div>
+      <div class="card">
+        <span class="num">Who</span>
+        <h3>Who I work with</h3>
+        <ul class="clean">
+          <li>Beginners and returners</li>
+          <li>Recreational athletes</li>
+          <li>Anyone who's felt out of place in a big gym</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="num">Where</span>
+        <h3>The space</h3>
+        <p>Expansive Strength &amp; Fitness is a small private studio — never more than a few
+           people training at once, and no mirrored-wall commercial gym energy.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ==================== HOW IT WORKS ==================== -->
+  <section id="how">
+    <div class="sec-head"><span class="sec-tag">03 — Getting started</span></div>
+    <h2>How it works</h2>
+    <div class="grid-3" style="margin-top:38px">
+      <div class="card">
+        <span class="num">STEP 01</span>
+        <h3>Free 20-minute intro call</h3>
+        <p>Your goals, training history, and schedule — and whether we're a good fit for each
+           other. No pressure to book.</p>
+      </div>
+      <div class="card">
+        <span class="num">STEP 02</span>
+        <h3>First session: assessment</h3>
+        <p>We look at how you move, try some lifts, and set starting points you can measure
+           against later.</p>
+      </div>
+      <div class="card">
+        <span class="num">STEP 03</span>
+        <h3>Ongoing training</h3>
+        <p>A program built around you and adjusted every session as you get stronger.</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:22px">
+      <h3>Good to know</h3>
+      <div class="grid-2" style="gap:0 52px">
+        <ul class="clean">
+          <li>Sessions are 60 minutes, one-on-one</li>
+          <li>24-hour cancellation policy</li>
+        </ul>
+        <ul class="clean">
+          <li>All equipment provided — bring sneakers and water</li>
+          <li>Street parking on Cedar Street, short walk from Davis</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ==================== RATES ==================== -->
+  <section id="rates">
+    <div class="sec-head"><span class="sec-tag">04 — Rates</span></div>
+    <h2>Simple pricing</h2>
+    <p class="lead-in">No contracts, no membership fees. Packages bring the per-session price down.</p>
+    <div class="rates" style="margin-top:38px">
+      <div class="rate">
+        <div class="tag">Single session</div>
+        <div class="price">$110</div>
+        <div class="per">60 minutes</div>
+      </div>
+      <div class="rate featured">
+        <div class="tag">5-session pack</div>
+        <div class="price">$525</div>
+        <div class="per">$105 per session</div>
+      </div>
+      <div class="rate">
+        <div class="tag">10-session pack</div>
+        <div class="price">$1,000</div>
+        <div class="per">$100 per session</div>
+      </div>
+    </div>
+    <p class="fineprint">
+      Packs are valid for four months. Card, Venmo, or Zelle. The intro call is always free.
+    </p>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ==================== HOURS ==================== -->
+  <section id="hours">
+    <div class="grid-2">
+      <div>
+        <div class="sec-head"><span class="sec-tag">05 — Schedule</span></div>
+        <h2>Hours</h2>
+        <div class="hours-row"><span>Monday</span><span>3:00 – 7:00 PM</span></div>
+        <div class="hours-row"><span>Tuesday</span><span>3:00 – 7:00 PM</span></div>
+        <div class="hours-row"><span>Thursday</span><span>3:00 – 7:00 PM</span></div>
+        <div class="hours-row"><span>Other times</span><span>Ask — I may be able to make it work</span></div>
+      </div>
+      <div>
+        <div class="card" style="margin-top:56px">
+          <span class="num">Location</span>
+          <h3>Expansive Strength &amp; Fitness</h3>
+          <p>189A Cedar Street<br>Somerville, MA 02145</p>
+          <p style="margin-top:16px">
+            <a href="https://maps.google.com/?q=189A+Cedar+Street+Somerville+MA+02145"
+               target="_blank" rel="noopener">Open in Google Maps →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact" style="padding-top:20px">
+    <div class="cta">
+      <h2>Let's talk</h2>
+      <p>
+        Tell me what you're looking for and I'll get back to you within a day. The first
+        conversation is free, and there's no pressure to book anything.
+      </p>
+      <!-- EDIT: your email address -->
+      <p style="margin-top:28px">
+        <a class="btn" href="mailto:hyunjifitness@gmail.com?subject=Training%20inquiry">Email me</a>
+      </p>
+      <p class="fineprint">
+        Or find me on
+        <a href="https://instagram.com/hyunjifitness" target="_blank" rel="noopener">Instagram</a>.
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>© 2026 Hyunji Fitness</span>
+    <span>Personal training at Expansive Strength &amp; Fitness · Somerville, MA</span>
+  </div>
+</footer>
+
+</body>
+</html>
