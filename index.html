@@ -6,7 +6,7 @@
 
 <!-- ============ EDIT: browser tab title + Google description ============ -->
 <title>Hyunji Fitness | Personal Training in Somerville, MA</title>
-<meta name="description" content="One-on-one personal training in Somerville, MA. Strength coaching for beginners, returners, and recreational athletes.">
+<meta name="description" content="Fitness for everybody. One-on-one personal training in Somerville, MA — strength coaching for longevity and health, built around how your body feels rather than how it looks.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,14 +14,14 @@
 
 <style>
   :root{
-    --bg:#121317;           /* page background */
-    --panel:#1b1d23;        /* cards */
-    --panel-2:#22252d;      /* raised cards */
-    --line:#2e323c;
-    --text:#f2f3f5;
-    --muted:#a4abb8;
-    --accent:#ff5c33;       /* EDIT: main accent — try #c9f24d lime or #35d0c0 teal */
-    --accent-2:#ffab54;     /* gradient partner */
+    --bg:#13181a;           /* page background */
+    --panel:#1b2225;        /* cards */
+    --panel-2:#222b2e;      /* raised cards */
+    --line:#2d3a3d;
+    --text:#f1f4f3;
+    --muted:#9fb0b2;
+    --accent:#4fd1c5;       /* EDIT: teal — the cool end of the gradient */
+    --accent-2:#d8e468;     /* EDIT: lime-gold — the warm end */
     --max:1120px;
   }
   *{box-sizing:border-box}
@@ -29,23 +29,25 @@
   body{
     margin:0; background:var(--bg); color:var(--text);
     font-family:'Inter',system-ui,-apple-system,sans-serif;
-    font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif; font-weight:700;
-           line-height:1.08; margin:0 0 .5em; letter-spacing:-.02em}
-  h1{font-size:clamp(2.6rem,6.5vw,4.6rem); text-transform:uppercase}
-  h2{font-size:clamp(1.8rem,3.8vw,2.7rem); text-transform:uppercase}
+           line-height:1.1; margin:0 0 .5em; letter-spacing:-.02em}
+  h1{font-size:clamp(2.2rem,5vw,3.4rem); text-transform:uppercase}
+  h2{font-size:clamp(1.7rem,3.6vw,2.5rem); text-transform:uppercase}
   h3{font-size:1.1rem; letter-spacing:-.01em}
-  p{margin:0 0 1.1em; color:var(--muted)}
+  p{margin:0 0 1.2em; color:var(--muted)}
   a{color:var(--accent)}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
-  section{padding:88px 0}
+  section{padding:80px 0}
   .rule{height:1px; background:var(--line); max-width:var(--max); margin:0 auto}
   .hl{background:linear-gradient(90deg,var(--accent),var(--accent-2));
       -webkit-background-clip:text; background-clip:text; color:transparent}
+  .eyebrow{font-size:.78rem; letter-spacing:.2em; text-transform:uppercase;
+           color:var(--accent); font-weight:600; margin-bottom:20px}
 
   /* ---------- nav ---------- */
-  nav{position:sticky; top:0; z-index:20; background:rgba(18,19,23,.86);
+  nav{position:sticky; top:0; z-index:20; background:rgba(18,19,23,.88);
       backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
   .nav-in{display:flex; align-items:center; justify-content:space-between;
           gap:16px; padding:16px 24px; max-width:var(--max); margin:0 auto}
@@ -64,34 +66,26 @@
        background:linear-gradient(100deg,var(--accent),var(--accent-2)); color:#15161a;
        transition:transform .15s ease, filter .15s ease}
   .btn:hover{transform:translateY(-2px); filter:brightness(1.08)}
-  .btn-ghost{background:none; color:var(--text); border:1.5px solid var(--line)}
-  .btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
 
-  /* ---------- hero ---------- */
-  .hero{position:relative; overflow:hidden}
-  .hero::before{content:""; position:absolute; inset:-30% -10% auto -20%; height:620px;
-    background:radial-gradient(45% 55% at 20% 40%, rgba(255,92,51,.28), transparent 70%),
-               radial-gradient(40% 50% at 75% 25%, rgba(255,171,84,.18), transparent 70%);
-    filter:blur(10px); pointer-events:none}
-  .hero-in{position:relative; display:grid; grid-template-columns:1.05fr .95fr;
-           gap:56px; align-items:center; padding:96px 0 92px}
-  .eyebrow{font-size:.78rem; letter-spacing:.2em; text-transform:uppercase;
-           color:var(--accent); font-weight:600; margin-bottom:22px}
-  .lede{font-size:1.15rem; max-width:44ch; color:#c6ccd6}
-  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:30px}
+  /* ---------- opening section ---------- */
+  .opening{position:relative; overflow:hidden}
+  .opening::before{content:""; position:absolute; inset:-40% -10% auto -25%; height:620px;
+    background:radial-gradient(48% 58% at 14% 36%, rgba(79,209,197,.22), transparent 70%),
+               radial-gradient(44% 52% at 80% 18%, rgba(216,228,104,.16), transparent 70%);
+    pointer-events:none}
+  .opening-in{position:relative; display:grid; grid-template-columns:1.15fr .85fr;
+              gap:56px; align-items:start; padding:76px 0 80px}
+  .prose p:last-child{margin-bottom:0}
   .photo-frame{border:1px solid var(--line); border-radius:12px; padding:10px;
-               background:var(--panel)}
+               background:var(--panel); position:sticky; top:96px}
   .photo{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:8px; display:block;
          background:var(--panel-2)}
   .photo-note{display:flex; align-items:center; justify-content:center; text-align:center;
               color:#6f7684; font-size:.88rem; padding:24px}
-  .stats{display:flex; gap:34px; margin-top:42px; flex-wrap:wrap}
-  .stat-n{font-family:'Space Grotesk',sans-serif; font-size:1.9rem; font-weight:700;
-          color:var(--text); line-height:1}
-  .stat-l{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
   @media(max-width:880px){
-    .hero-in{grid-template-columns:1fr; gap:38px; padding:60px 0}
-    .hero-photo{order:-1; max-width:340px}
+    .opening-in{grid-template-columns:1fr; gap:38px; padding:52px 0 56px}
+    .opening-photo{max-width:340px}
+    .photo-frame{position:static}
   }
 
   /* ---------- layout helpers ---------- */
@@ -100,14 +94,12 @@
   @media(max-width:880px){ .grid-3,.grid-2{grid-template-columns:1fr; gap:22px} }
   .card{background:var(--panel); border:1px solid var(--line); border-radius:12px;
         padding:28px; transition:border-color .2s ease, transform .2s ease}
-  .card:hover{border-color:#3d4351; transform:translateY(-3px)}
+  .card:hover{border-color:#41585b; transform:translateY(-3px)}
   .card h3{margin-bottom:.5em}
   .card p{margin:0; font-size:.96rem}
   .num{font-family:'Space Grotesk',sans-serif; font-size:.8rem; font-weight:700;
        letter-spacing:.16em; color:var(--accent); display:block; margin-bottom:14px}
-  .lead-in{max-width:54ch}
-  .sec-head{display:flex; align-items:baseline; gap:18px; flex-wrap:wrap; margin-bottom:34px}
-  .sec-tag{font-size:.75rem; letter-spacing:.2em; text-transform:uppercase; color:var(--accent)}
+  .lead-in{max-width:56ch}
 
   ul.clean{list-style:none; padding:0; margin:0}
   ul.clean li{padding:10px 0 10px 26px; position:relative; color:var(--muted); font-size:.96rem}
@@ -135,11 +127,12 @@
   .hours-row span:last-child{color:var(--muted)}
 
   /* ---------- cta + footer ---------- */
-  .cta{position:relative; text-align:center; padding:96px 24px; border-radius:16px;
-       background:linear-gradient(135deg,#22252d,#1a1c22); border:1px solid var(--line);
+  .cta{position:relative; text-align:center; padding:88px 24px; border-radius:16px;
+       background:linear-gradient(135deg,#222b2e,#191f21); border:1px solid var(--line);
        overflow:hidden}
-  .cta::after{content:""; position:absolute; inset:auto -10% -60% -10%; height:340px;
-    background:radial-gradient(50% 60% at 50% 50%, rgba(255,92,51,.22), transparent 70%)}
+  .cta::after{content:""; position:absolute; inset:auto -10% -60% -10%; height:360px;
+    background:radial-gradient(52% 62% at 38% 50%, rgba(79,209,197,.24), transparent 70%),
+               radial-gradient(46% 56% at 70% 55%, rgba(216,228,104,.16), transparent 70%)}
   .cta > *{position:relative; z-index:1}
   .cta p{max-width:46ch; margin-left:auto; margin-right:auto}
   footer{border-top:1px solid var(--line); padding:34px 0; font-size:.86rem; color:#6f7684}
@@ -154,8 +147,8 @@
     <!-- EDIT: your business name -->
     <a class="brand" href="#top">Hyunji<span>Fitness</span></a>
     <div class="nav-links">
-      <a href="#about">About</a>
       <a href="#approach">Approach</a>
+      <a href="#about">About</a>
       <a href="#how">How it works</a>
       <a href="#rates">Rates</a>
       <a href="#contact">Contact</a>
@@ -163,41 +156,48 @@
   </div>
 </nav>
 
-<!-- ==================== HERO ==================== -->
-<div class="hero" id="top">
-  <div class="wrap hero-in">
-    <div>
+<!-- ==================== APPROACH / PHILOSOPHY ==================== -->
+<div class="opening" id="top">
+  <div class="wrap opening-in" id="approach">
+    <div class="prose">
       <div class="eyebrow">Personal Training — Somerville, MA</div>
-      <h1>Get strong<br>on <span class="hl">your terms</span>.</h1>
-      <p class="lede">
-        One-on-one coaching in a small private studio five minutes from Davis Square.
-        No judgment, no gimmicks — real programming, built around the body you have
-        and the goals you actually care about.
+      <h1>Fitness for<br><span class="hl">Everybody</span>.</h1>
+
+      <p>
+        I coach with a long horizon in mind. Most of what strength training gives you shows up
+        decades from now: carrying your own groceries at eighty, getting off the floor without
+        thinking about it, keeping your balance on ice, healing well when something goes wrong.
+        A good program should make the next forty years easier, not just the next twelve weeks.
       </p>
-      <div class="hero-actions">
-        <!-- EDIT: swap # for your booking link when you have one -->
-        <a class="btn" href="#contact">Book a free intro call</a>
-        <a class="btn btn-ghost" href="#rates">See rates</a>
-      </div>
-      <div class="stats">
-        <div>
-          <div class="stat-n">1:1</div>
-          <div class="stat-l">Always private</div>
-        </div>
-        <div>
-          <div class="stat-n">60<span style="font-size:1.1rem">min</span></div>
-          <div class="stat-l">Per session</div>
-        </div>
-        <div>
-          <div class="stat-n">ACSM</div>
-          <div class="stat-l">Certified trainer</div>
-        </div>
-      </div>
+
+      <p>
+        So we pay attention to how your body feels rather than how it looks. Do the stairs feel
+        easier? Is your back quieter at the end of a workday? Did you sleep better this week?
+        Those are the signals worth chasing, and they're the ones that keep people training long
+        after a number on a scale would have stopped mattering. There's no talk here about
+        earning your food or making up for the weekend.
+      </p>
+
+      <p>
+        Bodies differ enormously — in proportions, in history, in what feels good and what
+        doesn't — so I don't have one program that everyone gets. We start by watching how you
+        actually move, find the version of each movement that fits your build, and adjust it as
+        you change. My background in engineering shows up here: I'm interested in how forces
+        travel through your joints and where you're compensating, because getting the mechanics
+        right is what lets you keep adding weight safely for years.
+      </p>
+
+      <p>
+        And it should be something you look forward to. If you dread your sessions, you won't
+        keep them, and consistency is the only thing that really compounds. The best program
+        is the one you're still doing a year from now.
+      </p>
     </div>
-    <div class="hero-photo">
+
+    <div class="opening-photo">
       <div class="photo-frame">
         <!-- EDIT: add hyunji.jpg to your repo and it appears here automatically -->
-        <img class="photo" src="hyunji.jpg" alt="Hyunji coaching a client"
+        <img class="photo" src="hyunji.jpg" alt="Hyunji, personal trainer in Somerville"
              onerror="this.outerHTML='&lt;div class=\'photo photo-note\'&gt;Add a photo named hyunji.jpg to your repo and it will appear here&lt;/div&gt;'">
       </div>
     </div>
@@ -212,36 +212,25 @@
   <section id="about">
     <div class="grid-2">
       <div>
-        <div class="sec-head"><span class="sec-tag">01 — About</span></div>
-        <h2>Hi, I'm Hyunji.</h2>
+        <h2>About me</h2>
         <p>
-          I started coaching in college. I was competing in taekwondo when the chance came up
-          to teach the cardio kickboxing PE class, and I ended up teaching it for four years.
+          I'm Hyunji, an ACSM Certified Personal Trainer working one-on-one out of Expansive
+          Strength &amp; Fitness, a small private studio on Cedar Street in Somerville.
         </p>
+        <!-- EDIT: add your story here later — how you first got into fitness -->
         <p>
-          After that I spent several years as a mechanical engineer, which changed how I think
-          about the body: how forces travel through joints, why small alignment details matter,
-          and how to build strength that holds up over time.
-        </p>
-        <p>
-          I missed working with people, so I earned my ACSM Certified Personal Trainer
-          credential and started coaching again — first over Zoom, then in person. Today I
-          train clients one-on-one at Expansive Strength &amp; Fitness on Cedar Street.
-        </p>
-        <p>
-          <!-- EDIT: make this line yours -->
-          Outside the gym you'll find me playing volleyball, baking sourdough, and walking my poodle.
+          I train beginners, people coming back after a long break, and recreational athletes
+          who want to stay healthy for their sport. If big commercial gyms have never felt like
+          your kind of place, this probably will.
         </p>
       </div>
       <div>
-        <div class="card" style="margin-top:56px">
-          <h3>Credentials</h3>
+        <div class="card" style="margin-top:12px">
+          <span class="num">Credentials</span>
           <ul class="clean">
             <li>ACSM Certified Personal Trainer</li>
-            <li>B.S. &amp; M.Eng., Mechanical Engineering — Cornell University</li>
             <li>CPR/AED certified</li>
             <li>Four years teaching university group fitness</li>
-            <li>Competitive taekwondo and volleyball background</li>
           </ul>
         </div>
       </div>
@@ -250,70 +239,16 @@
 
   <div class="rule"></div>
 
-  <!-- ==================== APPROACH ==================== -->
-  <section id="approach">
-    <div class="sec-head">
-      <span class="sec-tag">02 — Approach</span>
-    </div>
-    <h2>How I coach</h2>
-    <p class="lead-in">Four things shape every session I run.</p>
-    <div class="grid-3" style="margin-top:38px">
-      <div class="card">
-        <span class="num">01</span>
-        <h3>Your body isn't a project to fix</h3>
-        <p>No talk about earning food or burning off the weekend. We focus on what your body
-           can do and what you want it to do next.</p>
-      </div>
-      <div class="card">
-        <span class="num">02</span>
-        <h3>Mechanics before load</h3>
-        <p>My engineering background shows up in the details: how you move, where you
-           compensate, and building a base that keeps you training for years.</p>
-      </div>
-      <div class="card">
-        <span class="num">03</span>
-        <h3>Progress you can feel</h3>
-        <p>Groceries up three flights without thinking. Back to your sport. Deadlifting your
-           bodyweight. Goals that matter to you, tracked session to session.</p>
-      </div>
-    </div>
-    <div class="grid-3" style="margin-top:22px">
-      <div class="card">
-        <span class="num">04</span>
-        <h3>Training you look forward to</h3>
-        <p>If you dread your workouts, they won't last. The best program is the one you're
-           still doing a year from now.</p>
-      </div>
-      <div class="card">
-        <span class="num">Who</span>
-        <h3>Who I work with</h3>
-        <ul class="clean">
-          <li>Beginners and returners</li>
-          <li>Recreational athletes</li>
-          <li>Anyone who's felt out of place in a big gym</li>
-        </ul>
-      </div>
-      <div class="card">
-        <span class="num">Where</span>
-        <h3>The space</h3>
-        <p>Expansive Strength &amp; Fitness is a small private studio — never more than a few
-           people training at once, and no mirrored-wall commercial gym energy.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="rule"></div>
-
   <!-- ==================== HOW IT WORKS ==================== -->
   <section id="how">
-    <div class="sec-head"><span class="sec-tag">03 — Getting started</span></div>
     <h2>How it works</h2>
+    <p class="lead-in">Three steps, and the first one is free.</p>
     <div class="grid-3" style="margin-top:38px">
       <div class="card">
         <span class="num">STEP 01</span>
-        <h3>Free 30-minute intro chat</h3>
+        <h3>Free 20-minute intro call</h3>
         <p>Your goals, training history, and schedule — and whether we're a good fit for each
-           other. Over Zoom or in-person.</p>
+           other. No pressure to book.</p>
       </div>
       <div class="card">
         <span class="num">STEP 02</span>
@@ -346,8 +281,8 @@
 
   <!-- ==================== RATES ==================== -->
   <section id="rates">
-    <div class="sec-head"><span class="sec-tag">04 — Rates</span></div>
-    <h2>Simple pricing</h2>
+    <h2>Rates</h2>
+    <p class="lead-in">No contracts, no membership fees. Packages bring the per-session price down.</p>
     <div class="rates" style="margin-top:38px">
       <div class="rate">
         <div class="tag">Single session</div>
@@ -376,15 +311,14 @@
   <section id="hours">
     <div class="grid-2">
       <div>
-        <div class="sec-head"><span class="sec-tag">05 — Schedule</span></div>
         <h2>Hours</h2>
-        <div class="hours-row"><span>Monday</span><span>4:00 – 7:00 PM</span></div>
-        <div class="hours-row"><span>Tuesday</span><span>4:00 – 7:00 PM</span></div>
-        <div class="hours-row"><span>Thursday</span><span>4:00 – 7:00 PM</span></div>
-        <div class="hours-row"><span>Other times</span><span>Please Inquire</span></div>
+        <div class="hours-row"><span>Monday</span><span>3:00 – 7:00 PM</span></div>
+        <div class="hours-row"><span>Tuesday</span><span>3:00 – 7:00 PM</span></div>
+        <div class="hours-row"><span>Thursday</span><span>3:00 – 7:00 PM</span></div>
+        <div class="hours-row"><span>Other times</span><span>Ask — I may be able to make it work</span></div>
       </div>
       <div>
-        <div class="card" style="margin-top:56px">
+        <div class="card" style="margin-top:12px">
           <span class="num">Location</span>
           <h3>Expansive Strength &amp; Fitness</h3>
           <p>189A Cedar Street<br>Somerville, MA 02145</p>
