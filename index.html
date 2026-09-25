@@ -52,7 +52,7 @@
   .nav-in{display:flex; align-items:center; justify-content:space-between; gap:18px;
           padding:18px 26px; max-width:var(--max); margin:0 auto}
   .brand{font-family:'Gabarito',sans-serif; font-weight:500; text-transform:uppercase;
-         letter-spacing:.24em; font-size:clamp(.78rem,2.4vw,.95rem); text-decoration:none;
+         letter-spacing:.24em; font-size:clamp(.88rem,2.8vw,1.15rem); text-decoration:none;
          color:var(--teal-pale); white-space:nowrap}
   .brand span{color:var(--lime)}
   .nav-links{display:flex; gap:4px; flex-wrap:wrap}
@@ -65,7 +65,7 @@
   /* EDIT: photo sizes — change max-width to make either photo bigger or smaller */
   .photo-frame{position:sticky; top:104px; max-width:380px; margin-left:auto;
                background:var(--card); padding:12px; border-radius:24px}
-  .portrait-frame{max-width:280px; margin-left:auto;
+  .portrait-frame{max-width:280px; margin-right:auto;
                   background:var(--card); padding:12px; border-radius:24px}
   .photo,.portrait{width:100%; aspect-ratio:4/5; object-fit:cover; display:block;
                    border-radius:16px; background:#e6ecd0}
@@ -76,7 +76,7 @@
   .opening{display:grid; grid-template-columns:1.25fr .75fr; gap:0 52px; align-items:start;
            padding:64px 26px 70px; max-width:var(--max); margin:0 auto}
   .opening-head{grid-column:1 / -1; margin-bottom:26px}   /* headline spans both columns */
-  .opening .lede{font-size:1.14rem; color:#3f4a36}
+  .opening .lede{font-size:1.14rem}   /* same color as all body text, just larger */
   .prose p:last-child{margin-bottom:0}
   @media(max-width:880px){
     .opening{grid-template-columns:1fr; gap:0; padding:44px 26px 48px}
@@ -86,7 +86,8 @@
 
   /* ---------- pieces ---------- */
   .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:46px}
-  .grid-about{display:grid; grid-template-columns:1.45fr .55fr; gap:46px; align-items:start}
+  .grid-about{display:grid; grid-template-columns:.55fr 1.45fr; gap:10px 46px; align-items:start}
+  .about-head{grid-column:1 / -1}   /* heading sits at the left margin, above both columns */
   .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
   @media(max-width:880px){
     .grid-2,.grid-3,.grid-about{grid-template-columns:1fr; gap:24px}
@@ -111,6 +112,8 @@
   .rate .tag{font-size:.76rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
   .rate .price{font-family:'Gabarito',sans-serif; font-weight:700; font-size:2.9rem;
                line-height:1; margin:12px 0 4px; letter-spacing:-.02em; color:var(--teal)}
+  .rate .price small{font-family:'Inter',sans-serif; font-size:1rem; font-weight:500;
+                     letter-spacing:0; color:var(--muted)}
   .rate .per{font-size:.92rem; color:var(--muted)}
   .fineprint{font-size:.9rem; color:#6f7a62; margin-top:20px}
 
@@ -167,27 +170,25 @@
 
   <div class="prose">
     <p class="lede">
-      I coach with a long horizon in mind. Most of what strength training gives you shows up
-      decades from now: carrying your own groceries at eighty, getting off the floor without
-      thinking about it, keeping your balance on ice, healing well when something goes wrong.
-      A good program should make the next forty years easier, not just the next twelve weeks.
+      I'm a personal trainer who cares about how your body feels, not how it looks. What we track
+      is what your body can do, and how it feels to do it. One of my favorite parts of this work
+      is helping people unlock strength they didn't know they had.
     </p>
     <p>
-      So we pay attention to how your body feels rather than how it looks. Do the stairs feel
-      easier? Is your back quieter at the end of a workday? Did you sleep better this week?
-      Those are the signals worth chasing, and they're the ones that keep people training long
-      after a number on a scale would have stopped mattering. There's no talk here about earning
-      your food or making up for the weekend.
+      My focus is health you can carry for decades. Strength that holds up, joints that move
+      easily, less pain in the places that have bothered you for years, and a clearer sense of
+      connection to your own body. Training pays off over a lifetime: your strength, your
+      metabolic health, your mood, your ability to handle a stressful week.
     </p>
     <p>
-      Bodies differ enormously — in proportions, in history, in what feels good and what doesn't —
-      so I don't have one program that everyone gets. We start by watching how you actually move,
-      find the version of each movement that fits your build, and adjust it as you change.
+      I also believe exercise should be something you enjoy rather than something you endure.
+      Movement becomes a real part of your life when it feels good and you look forward to it,
+      so we'll find the version of training you actually like and let consistency do the work.
     </p>
     <p>
-      And it should be something you look forward to. If you dread your sessions, you won't keep
-      them, and consistency is the only thing that really compounds. The best program is the one
-      you're still doing a year from now.
+      I don't have one program that everyone follows. Your history, your schedule, your injuries,
+      the sport you play, and what you want from this are all your own. We'll build around the
+      body and the life you have, and keep adjusting as both of them change.
     </p>
   </div>
 
@@ -206,23 +207,37 @@
   <!-- ==================== ABOUT ==================== -->
   <section id="about">
     <div class="grid-about">
-      <div>
+      <div class="about-head">
         <h2>About me</h2>
-        <p>
-          I'm Hyunji, an ACSM Certified Personal Trainer working one-on-one out of Expansive
-          Strength &amp; Fitness, a small private studio on Cedar Street in Somerville.
-        </p>
-        <!-- EDIT: add your story here later — how you first got into fitness -->
-        <p>
-          I train beginners, people coming back after a long break, and recreational athletes who
-          want to stay healthy for their sport. If big commercial gyms have never felt like your
-          kind of place, this probably will.
-        </p>
       </div>
       <div class="portrait-frame">
         <!-- EDIT: upload hyunji.jpg to your repo — your portrait -->
         <img class="portrait" src="hyunji.jpg" alt="Hyunji, personal trainer in Somerville"
              onerror="this.outerHTML='&lt;div class=\'portrait photo-note\'&gt;Add a photo named hyunji.jpg to your repo and it will appear here&lt;/div&gt;'">
+      </div>
+      <div>
+        <p>
+          I'm Hyunji, an ACSM Certified Personal Trainer passionate about bringing fitness to
+          everybody.
+        </p>
+        <p>
+          I joined the taekwondo team in college as a white belt with no martial arts background,
+          and it taught me two things I still coach from: that getting better is mostly about
+          showing up, and that moving your body feels good, especially when you're doing it
+          alongside other people. That led me to teaching cardio kickboxing PE classes in college,
+          where I found out I loved coaching.
+        </p>
+        <p>
+          These days most of my own training revolves around volleyball. A lot of what I do in the
+          gym is built around it — jumping higher, landing better, keeping my shoulders happy.
+          I train hard for it, but how hard we go is always your call. It keeps me honest about
+          what it's like to have a goal you care about and a body with its own opinions about how
+          to get there.
+        </p>
+        <p>
+          I work with people who are brand new to exercising, people coming back after years away,
+          and athletes chasing something specific. Wherever you're starting, we build from there.
+        </p>
       </div>
     </div>
   </section>
@@ -234,8 +249,7 @@
       <div class="card">
         <span class="pill">Step 1</span>
         <h3>Free 25-minute intro chat</h3>
-        <p>Your goals, training history, and schedule — and whether we're a good fit for each
-           other. Over Zoom or in-person.</p>
+        <p>We talk about your starting point, training history, and goals. Over Zoom or in-person.</p>
       </div>
       <div class="card">
         <span class="pill">Step 2</span>
@@ -246,7 +260,7 @@
       <div class="card">
         <span class="pill">Step 3</span>
         <h3>Ongoing training</h3>
-        <p>A program built around you and adjusted every session as you get stronger.</p>
+        <p>A program built around you and adjusted as you evolve and get stronger.</p>
       </div>
     </div>
     <div class="card" style="margin-top:20px">
@@ -267,25 +281,32 @@
   <!-- ==================== RATES ==================== -->
   <section id="rates">
     <h2>Rates</h2>
+    <p>
+      Training works best as a routine, so I bill by how often we meet rather than by the bundle.
+      You keep a standing slot each week, and I invoice monthly for the sessions on the calendar.
+    </p>
     <div class="rates">
+      <div class="rate">
+        <div class="tag">Twice a week</div>
+        <div class="price">$100<small> /session</small></div>
+        <div class="per">~$800–1,000 a month<br>(8–10 sessions)</div>
+      </div>
+      <div class="rate">
+        <div class="tag">Once a week</div>
+        <div class="price">$105<small> /session</small></div>
+        <div class="per">~$420–525 a month<br>(4–5 sessions)</div>
+      </div>
       <div class="rate">
         <div class="tag">Single session</div>
         <div class="price">$110</div>
-        <div class="per">60 minutes</div>
-      </div>
-      <div class="rate">
-        <div class="tag">5-session pack</div>
-        <div class="price">$525</div>
-        <div class="per">$105 per session</div>
-      </div>
-      <div class="rate">
-        <div class="tag">10-session pack</div>
-        <div class="price">$1,000</div>
-        <div class="per">$100 per session</div>
+        <div class="per">Drop in anytime</div>
       </div>
     </div>
     <p class="fineprint">
-      Packs are valid for four months. Card, Venmo, or Zelle. The intro chat is always free.
+      Most months have four of any given weekday, and a few have five — so your invoice covers
+      however many sessions actually fall on the calendar that month. No contract: you can pause
+      for travel or stop with two weeks' notice. Card, Venmo, or Zelle. The intro chat is always
+      free.
     </p>
   </section>
 
