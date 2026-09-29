@@ -125,6 +125,11 @@
   .fineprint{font-size:.9rem; color:#6f7a62; margin-top:20px}
 
   /* ---------- hours ---------- */
+  .hours-grid{align-items:start}   /* card no longer stretches */
+  .hours-list{max-width:400px}     /* EDIT: width of the hours list — keeps days and times close */
+  .hours-grid .card{margin-top:calc(clamp(1.7rem,3.4vw,2.3rem) * 1.6)}  /* lines up with Monday */
+  .hours-grid .card p:last-child{margin-bottom:0}
+  @media(max-width:880px){ .hours-grid .card{margin-top:0} }
   .hours-row{display:flex; justify-content:space-between; gap:20px; padding:14px 0;
              border-bottom:1px solid var(--line)}
   .hours-row:last-child{border-bottom:none}
@@ -250,7 +255,7 @@
       <div class="card">
         <span class="pill">Step 1</span>
         <h3>Free 25-minute intro chat</h3>
-        <p>We talk about your starting point, health history, goals, and more. We find out 
+        <p>We talk about your starting point, health history, goals, and more. We find out
           if we're a good fit for each other. Over Zoom or in person.</p>
       </div>
       <div class="card">
@@ -301,20 +306,20 @@
       </div>
     </div>
     <p class="fineprint">
-      Each session is 1 hour. You keep a standing slot each week, and I bill monthly for the sessions on the calendar. 
-      Most months have four of any given weekday, and a few have five. 
+      Each session is 1 hour. You keep a standing slot each week, and I bill monthly for the sessions on the calendar.
+      Most months have four of any given weekday, and a few have five.
     </p>
-    <p class="fineprint">      
-      I understand life happens, so if travel, illness, or work gets in the way, 
-      we can try to find another time that week. If you know you'll be away for part of a month, let me know and I'll 
+    <p class="fineprint">
+      I understand life happens, so if travel, illness, or work gets in the way,
+      we can try to find another time that week. If you know you'll be away for part of a month, let me know and I'll
       adjust your invoice. There's no contract, and you can pause or stop anytime with two weeks' notice.
     </p>
   </section>
 
   <!-- ==================== HOURS ==================== -->
   <section id="hours">
-    <div class="grid-2">
-      <div>
+    <div class="grid-2 hours-grid">
+      <div class="hours-list">
         <h2>Hours</h2>
         <div class="hours-row"><span>Monday</span><span>4:00 – 7:00 PM</span></div>
         <div class="hours-row"><span>Tuesday</span><span>4:00 – 7:00 PM</span></div>
@@ -326,7 +331,7 @@
         <span class="pill">Location</span>
         <h3><a href="https://www.expansivestrength.com/" target="_blank" rel="noopener">Expansive Strength &amp; Fitness</a></h3>
         <p>189A Cedar Street<br>Somerville, MA 02145</p>
-        <p style="margin:0">
+        <p>
           <a href="https://maps.google.com/?q=189A+Cedar+Street+Somerville+MA+02145"
              target="_blank" rel="noopener">Open in Google Maps →</a>
         </p>
