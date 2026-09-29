@@ -12,6 +12,8 @@
 <meta property="og:title" content="Hyunji Fitness — Personal Training in Somerville, MA">
 <meta property="og:description" content="Fitness for everybody. One-on-one strength coaching at Expansive Strength & Fitness.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://hyunjifitness.com/">
+<meta property="og:image" content="https://hyunjifitness.com/hyunji-kim-personal-trainer.jpg">
 
 <!-- favicon: teal square with an H -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23177a73'/><rect x='19' y='16' width='7' height='32' rx='3.5' fill='%23f2f6de'/><rect x='38' y='16' width='7' height='32' rx='3.5' fill='%23f2f6de'/><rect x='19' y='28' width='26' height='7' rx='3.5' fill='%23c9dd4f'/></svg>">
@@ -44,7 +46,7 @@
   h2{font-size:clamp(1.7rem,3.4vw,2.3rem); color:var(--teal)}   /* section headings in teal */
   h3{font-size:1.14rem; font-weight:600}
   h1 .accent{color:var(--teal)}
-  p{margin:0 0 1.2em; color:var(--muted)}
+  p{margin:0 0 1.2em; color:var(--muted)}   /* all body text: same size and color */
   a{color:var(--teal)}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 26px}
   section{padding:74px 0}
@@ -67,10 +69,11 @@
   @media(max-width:820px){ .nav-links{display:none} }
 
   /* ---------- photos ---------- */
-  /* EDIT: photo sizes — change max-width to make either photo bigger or smaller */
-  .photo-frame{position:sticky; top:104px; max-width:300px; margin-right:auto;
+  /* EDIT: photo sizes. If you change a max-width here, change the matching px
+     value in .opening or .grid-about below to the same number. */
+  .photo-frame{position:sticky; top:104px; max-width:300px;
                background:var(--card); padding:12px; border-radius:24px}
-  .portrait-frame{max-width:340px; margin-left:auto;
+  .portrait-frame{max-width:340px;
                   background:var(--card); padding:12px; border-radius:24px}
   .photo,.portrait{width:100%; aspect-ratio:4/5; object-fit:cover; display:block;
                    border-radius:16px; background:#e6ecd0}
@@ -78,20 +81,19 @@
               color:#7d8a6d; font-size:.85rem; padding:20px}
 
   /* ---------- opening ---------- */
-  .opening{display:grid; grid-template-columns:.72fr 1.28fr; gap:0 52px; align-items:start;
+  .opening{display:grid; grid-template-columns:300px 1fr; gap:0 36px; align-items:start;
            padding:64px 26px 70px; max-width:var(--max); margin:0 auto}
   .opening-head{grid-column:1 / -1; margin-bottom:26px}   /* headline spans both columns */
-  .opening .lede{font-size:1.14rem}   /* same color as all body text, just larger */
   .prose p:last-child{margin-bottom:0}
   @media(max-width:880px){
     .opening{grid-template-columns:1fr; gap:0; padding:44px 26px 48px}
     .opening-head{margin-bottom:20px}
-    .photo-frame{position:static; max-width:330px; margin:30px auto 0}
+    .photo-frame{position:static; max-width:330px; margin:0 auto 30px}
   }
 
   /* ---------- pieces ---------- */
   .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:46px}
-  .grid-about{display:grid; grid-template-columns:1.35fr .65fr; gap:10px 46px; align-items:start}
+  .grid-about{display:grid; grid-template-columns:1fr 340px; gap:10px 36px; align-items:start}
   .about-head{grid-column:1 / -1}   /* heading sits at the left margin, above both columns */
   .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
   @media(max-width:880px){
@@ -175,14 +177,14 @@
 
   <div>
     <div class="photo-frame">
-      <!-- EDIT: upload hyunji.jpg to your repo — your portrait -->
-      <img class="photo" src="hyunji.jpg" alt="Hyunji, personal trainer in Somerville"
-           onerror="this.outerHTML='&lt;div class=\'photo photo-note\'&gt;Add your portrait as hyunji.jpg&lt;/div&gt;'">
+      <!-- EDIT: your portrait, uploaded to the repo as hyunji-kim-personal-trainer.jpg -->
+      <img class="photo" src="hyunji-kim-personal-trainer.jpg" alt="Hyunji Kim, personal trainer in Somerville"
+           onerror="this.outerHTML='&lt;div class=\'photo photo-note\'&gt;Add your portrait as hyunji-kim-personal-trainer.jpg&lt;/div&gt;'">
     </div>
   </div>
 
   <div class="prose">
-    <p class="lede">
+    <p>
       I'm a personal trainer based in Somerville, MA. My focus is
       health you can carry for decades. Strength that holds up, joints that move
       easily, less pain in the places that have bothered you for years, and a clearer sense of
@@ -234,9 +236,9 @@
         </p>
       </div>
       <div class="portrait-frame">
-        <!-- EDIT: upload fun.jpg to your repo — a candid: coaching, lifting, or volleyball -->
-        <img class="portrait" src="fun.jpg" alt="Hyunji coaching at the studio"
-             onerror="this.outerHTML='&lt;div class=\'portrait photo-note\'&gt;Add a second photo as fun.jpg&lt;/div&gt;'">
+        <!-- EDIT: your candid photo, uploaded to the repo as hyunji-kim.jpg -->
+        <img class="portrait" src="hyunji-kim.jpg" alt="Hyunji Kim training"
+             onerror="this.outerHTML='&lt;div class=\'portrait photo-note\'&gt;Add a second photo as hyunji-kim.jpg&lt;/div&gt;'">
       </div>
     </div>
   </section>
